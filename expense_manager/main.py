@@ -3,13 +3,15 @@ from storage import load_expenses, save_expenses
 
 expenses = load_expenses()
 
-print("1. Add Expense")
-print("2. View Expenses")
-print("3. Exit")
+while True:  
+  
+  print("1. Add Expense")
+  print("2. View Expenses")
+  print("3. Exit")
 
-choice = input("Choose an option: ")
+  choice = input("Choose an option: ")
  
-if choice == "1":
+  if choice == "1":
    
    amount = input("Enter the amount: ")
    category = input("Enter the category: ")
@@ -22,7 +24,7 @@ if choice == "1":
 
    save_expenses(expenses)
 
-elif choice == "2":
+  elif choice == "2":
    for expense in expenses:
        print("Amount:", expense["amount"])
        print("Category:", expense["category"])
@@ -30,6 +32,7 @@ elif choice == "2":
        print("Date:", expense["date"])
        print("--------------------")
 
-elif choice == "3":
+  elif choice == "3":
     print("Exiting the program.")   
+    break
 
