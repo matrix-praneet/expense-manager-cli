@@ -7,7 +7,8 @@ while True:
   
   print("1. Add Expense")
   print("2. View Expenses")
-  print("3. Exit")
+  print("3. Delete Expense")
+  print("4. Exit")
 
   choice = input("Choose an option: ")
  
@@ -33,6 +34,17 @@ while True:
        print("--------------------")
 
   elif choice == "3":
+   for i, expense in enumerate(expenses):
+      print(i, expense)
+      index = int(input("Enter the number of the expense to delete: "))
+      if index < 0 or index >= len(expenses):
+        print("Invalid index. Please try again.")
+      else:
+        expenses.pop(index)
+        save_expenses(expenses)
+        print("Expense deleted successfully.")
+
+  elif choice == "4":
     print("Exiting the program.")   
     break
 
