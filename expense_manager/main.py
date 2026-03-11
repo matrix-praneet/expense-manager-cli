@@ -8,7 +8,8 @@ while True:
   print("1. Add Expense")
   print("2. View Expenses")
   print("3. Delete Expense")
-  print("4. Exit")
+  print("4. Summary")
+  print("5. Exit")
 
   choice = input("Choose an option: ")
  
@@ -45,6 +46,14 @@ while True:
         print("Expense deleted successfully.")
 
   elif choice == "4":
+    total = 0
+    for expense in expenses:
+      total += int(expense["amount"])
+
+    print("Total Expenses:", total)
+        
+
+  elif choice == "5":
     print("Exiting the program.")   
     break
 
