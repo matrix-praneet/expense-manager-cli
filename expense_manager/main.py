@@ -27,7 +27,10 @@ while True:
    save_expenses(expenses)
 
   elif choice == "2":
+   if not expenses:
+     print("No expenses recorded.")
    for expense in expenses:
+       print("Expense:", i)
        print("Amount:", expense["amount"])
        print("Category:", expense["category"])
        print("Description:", expense["description"])
